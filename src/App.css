@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@theme {
+  /* Colors */
+  --color-primary: #1E3A8A;  
+  --color-secondary: #0F766E; 
+  --color-accent: #0369A1;   
+  --color-dark: #0B0F19;
+  --color-light: #F1F5F9; 
+
+  /* Font */
+  --font-sans: 'Inter', sans-serif;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+/* -------Base Styles--------- */
+
+@layer base{
+  body{
+    @apply bg-light text-dark font-sans antialiased;
+  }
+  .app-container{
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+@layer components{
+  .gradient-text{ 
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  }
+  .nav-item{
+    @apply text-gray-500 hover:text-primary transition  duration-200 text-base font-medium px-3 py-2
+  }
+  .mobile-nav-item{
+    @apply block text-gray-500 hover:text-primary hover:translate-x-1 hover:bg-gray-50 transition duration-200 text-base font-medium px-3 py-2 rounded-md
+  }
+  .nav-btn{
+    @apply text-white bg-primary py-2 px-4 rounded-md hover:bg-primary/90 text-sm font-medium transition;
+  }
+  .mobile-nav-btn{
+    @apply block w-full mt-2 text-center text-white bg-primary py-2 px-4 rounded-md hover:bg-primary/90 text-sm font-medium transition;
+  }
+  .btn-primary{
+    @apply bg-primary hover:bg-primary/90 text-white w-full py-2 rounded-lg font-medium text-center transition shadow-lg hover:shadow-primary/30;
+  }
+  .btn-outline {
+    @apply border-2 border-gray-300 hover:border-primary text-gray-700 hover:text-primary px-6 py-3 rounded-lg font-medium text-center transition;
+  }
+  .section-status{
+    @apply flex flex-col items-center justify-center gap-3 min-h-100 p-6 text-center
+  }
+  
+  footer {
+    @apply bg-gradient-to-b from-dark to-gray-900 text-white pt-16 pb-8 overflow-x-hidden;
+  }
+  .footer-description{
+    @apply text-gray-400 leading-relaxed max-w-md
+  }
+  .footer-social-link {
+    @apply text-gray-400 hover:text-white transition hover:-translate-y-1;
+  }
+  .footer-bottom-text{
+    @apply text-gray-500 text-sm
+  }
+    .footer-bottom-link-group{
+    @apply  flex flex-col space-y-2 space-x-6 mt-4 md:mt-0
+  }
+  .footer-bottom-link{
+    @apply text-gray-500 hover:text-gray-300  text-sm  transition duration-300
+  }
+}
